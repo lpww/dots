@@ -1,0 +1,26 @@
+#!/bin/bash
+
+print_date() {
+  date +"%a %d %b %R:%S"
+}
+
+print_bat() {
+  echo $(cat /sys/class/power_supply/BAT0/capacity)"%"
+}
+
+print_mem(){
+  memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
+  echo -e "$memfree"
+}
+
+print_temp(){
+  test -f /sys/class/thermal/thermal_zone9/temp || return 0
+  echo $(head -c 2 /sys/class/thermal/thermal_zone9/temp)C
+}
+
+while true
+do
+  xsetroot -name "$(print_mem) $(print_temp) $(print_bat) $(print_date)"
+   sleep 1    # Update time every second
+done
+
