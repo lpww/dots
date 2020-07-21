@@ -1,1 +1,5 @@
-/home/thomas/dotfiles/xorg/colors.Xresources
+!!Colors
+!! Source by .Xresources
+
+!!color options
+#include "/home/thomas/code/nerd/colors/crayolo/colors/mattd"

@@ -1,1 +1,70 @@
-/home/thomas/dotfiles/xorg/Xresources
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! The .colors.Xresources file requires cpp to be enabled
+! when loading xresource, which is disabled by default in
+! arch. To enable:
+
+! Arch Linux has the following code in /etc/gdm/Xsession
+!
+! if [ -f "$userresources" ]; then
+!     xrdb -nocpp -merge "$userresources"
+! fi
+!
+! The argument -nocpp indicates that xrdb should not run the input through the preprocessor.
+! The fix is to remove the -nocpp option from the above command.
+
+#if __has_include(".colors.Xresources")
+#include ".colors.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+XTerm*background: #2b2b2b
+XTerm*foreground: #e7e7e7
+XTerm*pointerColor: #16A085
+XTerm*faceName: Fixed
+XTerm*faceSize: 11
+
+! St
+! These options only take effect on startup.
+st.termname:     st-256color
+! if you do not set shell, precedence is: -e arg, utmp option, SHELL env var, /etc/passwd shell
+st.shell:        /bin/zsh
+
+! The following options options can be reloaded via USR1 signal.
+st.font: DejaVu Sans Mono:pixelsize=15:antialias=true:autohint=true;
+
+! Colors
+
+*background:   bg
+*foreground:   fg
+
+*color0:      blk
+*color8:      bblk
+*color1:      red
+*color9:      bred
+*color2:      grn
+*color10:     bgrn
+*color3:      ylw
+*color11:     bylw
+*color4:      blu
+*color12:     bblu
+*color5:      mag
+*color13:     bmag
+*color6:      cyn
+*color14:     bcyn
+*color7:      wht
+*color15:     bwht
