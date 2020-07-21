@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+PROFILE=$1
+
+firefox -p $PROFILE -no-remote &
+
