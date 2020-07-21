@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/thomas/code/nerd/colors/crayolo/walls/mattd.jpg' 
