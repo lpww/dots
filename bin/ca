@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# code climate analyze changes in a named branch
+
+set -e
+
+BASE_BRANCH=origin/master
+CHANGES_BRANCH=$1
+
+MODIFIED_FILES=`git diff $BASE_BRANCH..$CHANGES_BRANCH --name-only`
+codeclimate analyze $MODIFIED_FILES
