@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
 
 # install manjaro repo packages
-sudo pacman -S ruby alacritty zsh vim feh slock dmenu xss-lock git trayer parcellite yay docker docker-compose
+sudo pacman -S \
+  alacritty \
+  dmenu \
+  docker \
+  docker-compose \
+  feh \
+  git \
+  parcellite \
+  ruby \
+  slock \
+  trayer \
+  vim \
+  xsel \
+  xss-lock \
+  yay \
+  zsh
 
 # install aur packages
-yay -S ripgrep
+yay -S antibody ripgrep
 
 # install colours
 git clone https://github.com/dkeg/crayolo.git ~/crayolo

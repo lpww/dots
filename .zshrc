@@ -200,16 +200,11 @@ function wttr(){
   curl 'http://wttr.in/\~'$LOCATION
 }
 
-#initialize antigen
-if [[ ! -f ~/antigen.zsh ]]; then
-  echo installing anitgen
-  curl -L git.io/antigen > ~/antigen.zsh
-fi
-source ~/antigen.zsh
+#antibody
+source <(antibody init)
 
 #plugins
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
+antibody bundle < ~/.zsh_plugins
 
 #ripgrep config path
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
