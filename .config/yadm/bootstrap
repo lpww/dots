@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install manjaro repo packages
-sudo pacman -S zsh vim feh slock dmenu xss-lock git trayer parcellite yay docker docker-compose
+sudo pacman -S ruby alacritty zsh vim feh slock dmenu xss-lock git trayer parcellite yay docker docker-compose
 
 # install aur packages
 yay -S ripgrep
