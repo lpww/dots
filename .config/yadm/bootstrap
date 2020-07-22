@@ -6,6 +6,9 @@ sudo pacman -S ruby alacritty zsh vim feh slock dmenu xss-lock git trayer parcel
 # install aur packages
 yay -S ripgrep
 
+# install colours
+git clone https://github.com/dkeg/crayolo.git ~/crayolo
+
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
