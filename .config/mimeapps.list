@@ -1,0 +1,18 @@
+[Default Applications]
+application/pdf=xreader.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+audio/mpeg=vlc.desktop;
+font/ttf=org.gnome.font-viewer.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+text/html=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop;
+x-scheme-handler/ftp=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
