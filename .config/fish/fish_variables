@@ -71,7 +71,7 @@ SETUVAR _fish_abbr_yr:yarn\x20run
 SETUVAR _fish_abbr_yre:rm\x20\x2drf\x20node_modules\x20\x26\x26\x20yarn\x20install
 SETUVAR _fish_abbr_ys:yarn\x20start
 SETUVAR _fish_abbr_yt:yarn\x20test
-SETUVAR fish_color_autosuggestion:normal
+SETUVAR fish_color_autosuggestion:blue
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:brgreen
 SETUVAR fish_color_comment:bryellow
