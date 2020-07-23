@@ -146,6 +146,12 @@ alias piauk='sudo openvpn --config /etc/openvpn/client/UK_London.conf'
 alias piauseast='sudo openvpn --config /etc/openvpn/client/US_East.conf'
 alias piauswest='sudo openvpn --config /etc/openvpn/client/US_West.conf'
 
+#handlr aliases
+alias hg='handlr get'
+alias hl='handlr list'
+alias ho='handlr open'
+alias hs='handlr set'
+
 #weather
 function wttr(){
   LOCATION=${1}
