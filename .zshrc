@@ -40,19 +40,6 @@ setopt MULTIOS
 #spell check commands
 setopt CORRECT
 
-#bumblebee aliases
-alias gpuenable="systemctl enable bumblebeed" # requires restart
-alias gpudisable="systemctl disable bumblebeed" # requires restart
-alias gpustatus="cat /proc/acpi/bbswitch" # "no such file" if gpu disabled, "off" if gpu enabled
-
-#calculator aliases
-function sc(){
-  bc <<< $1
-}
-
-#ergodox aliases
-alias ef='teensy-loader-cli -w -v -mmcu=atmega32u4 $1'
-
 #networkmanger aliases
 alias nml='nmcli d wifi list'
 alias nmd='nmcli c down $1'
@@ -109,44 +96,12 @@ alias ns='npm start'
 #list globally installed packages
 alias ng='npm list -g --depth=apply'
 
-#patching aliases
-function wpatch(){ # only works if it's the first patch on that version
-  VERSION=${1}
-  git fetch --tags
-  git checkout shrinkwrap-$VERSION
-  newb hotfix-$VERSION
-  newf
-}
-function newb(){
-  BRANCH=${1}
-  git branch $BRANCH && git checkout $BRANCH && git push --set-upstream origin $BRANCH
-}
-function newf(){
-  BRANCH=`gcb`
-  git checkout -b $BRANCH'-changes'
-}
-
 #docker aliases
 alias dcp='docker container prune'
 alias dsp='docker system prune'
 alias dvp='docker volume prune'
 
-#baseui aliases
-alias br='~/code/nearform/baseui'
-
-#react-browser-hooks aliases
-alias hr='~/code/nearform/react-browser-hooks'
-
-#wave aliases
-alias wr='~/code/wave'
-alias wrr='~/code/vpn/reroute.sh ~/code/vpn/wave-reroutes'
-alias wi='wave init'
-alias wd='wave data -i clean'
-alias wu='wave update -t top -i clean'
-alias ws='ES_ENABLED=true wave start-dev'
-alias waves='sudo sysctl -w vm.max_map_count=262144'
-
-#datahub aliases
+#react aliases
 function dcc(){ # create a new component from an existing one
   SOURCE_PATH=${1}
   NEW_PATH=${2}
@@ -169,9 +124,6 @@ function dmc(){ # create a new component from an existing one
   mv $NEW_PATH/$SOURCE_NAME.js $NEW_PATH/$NEW_NAME.js #update file name
   grep $SOURCE_NAME $NEW_PATH -lR | xargs sed -i s/$SOURCE_NAME/$NEW_NAME/g #update file contents
 }
-
-#doom3 aliases
-alias d3='dhewm3 +set fs_basepath /home/thomas/.steam/root/steamapps/common/Doom\ 3'
 
 #vim aliases
 alias v='vim'
