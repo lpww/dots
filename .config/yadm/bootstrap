@@ -9,9 +9,11 @@ sudo pacman -S \
   feh \
   git \
   parcellite \
+  pdfgrep \
   ruby \
   slock \
   trayer \
+  tree \
   vim \
   xsel \
   xss-lock \
