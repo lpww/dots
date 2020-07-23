@@ -1,5 +1,5 @@
 function fish_prompt
+    set_color -o
     echo -n (basename $PWD)
-    set_color normal
     echo -n ' % '
 end
