@@ -1,3 +1,5 @@
+[Added Associations]
+
 [Default Applications]
 application/pdf=xreader.desktop;
 application/x-extension-htm=firefox.desktop;
@@ -8,6 +10,7 @@ application/x-extension-xhtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 audio/mpeg=vlc.desktop;
 font/ttf=org.gnome.font-viewer.desktop;
+image/gif=firefox.desktop;
 image/jpeg=feh.desktop;
 image/png=feh.desktop;
 text/html=firefox.desktop;
