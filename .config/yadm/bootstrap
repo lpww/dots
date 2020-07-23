@@ -7,6 +7,7 @@ sudo pacman -S \
   docker \
   docker-compose \
   feh \
+  fish \
   git \
   parcellite \
   pdfgrep \
@@ -15,10 +16,11 @@ sudo pacman -S \
   trayer \
   tree \
   vim \
+  vlc \
+  xreader \
   xsel \
   xss-lock \
-  yay \
-  zsh
+  yay 
 
 # install aur packages
 yay -S antibody handlr-bin ripgrep
@@ -30,4 +32,4 @@ git clone https://github.com/dkeg/crayolo.git ~/crayolo
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # set zsh as default shell
-chsh -s /bin/zsh
+chsh -s /bin/fish
