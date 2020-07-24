@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 
-# move a component to another location
+# move and rename a component while retaining folder structure and all files
+# useful when refactoring
 
 SOURCE_PATH=${1}
-NEW_PATH=${2}
 SOURCE_NAME=$(basename $SOURCE_PATH)
+
+NEW_PATH=${2}
 NEW_NAME=$(basename $NEW_PATH)
+
 echo moving $SOURCE_PATH to $NEW_PATH
-mv $SOURCE_PATH $NEW_PATH #move source component to new path
-mv $NEW_PATH/$SOURCE_NAME.jsx $NEW_PATH/$NEW_NAME.jsx #update file name
-mv $NEW_PATH/$SOURCE_NAME.spec.jsx $NEW_PATH/$NEW_NAME.spec.jsx #update file name
-grep $SOURCE_NAME $NEW_PATH -lR | xargs sed -i s/$SOURCE_NAME/$NEW_NAME/g #update file contents
+
+# move files
+mv $SOURCE_PATH $NEW_PATH
+
+# rename files
+rename $SOURCE_NAME $NEW_NAME $NEW_PATH/*
+grep $SOURCE_NAME $NEW_PATH -lR | xargs sed -i s/$SOURCE_NAME/$NEW_NAME/g
 
