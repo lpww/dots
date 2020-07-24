@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
 
-# create a new component from an existing one
+# bootstrap a new component by using an existing one as a template
+# useful for generating component boilerplate and folder structure
 
-SOURCE_PATH=${1}
+TEMPLATE_PATH=${1}
+TEMPLATE_NAME=$(basename $TEMPLATE_PATH)
+
 NEW_PATH=${2}
-SOURCE_NAME=$(basename $SOURCE_PATH)
 NEW_NAME=$(basename $NEW_PATH)
+
 echo creating $NEW_NAME component in $NEW_PATH
-echo based on $SOURCE_NAME component in $SOURCE_PATH
-mkdir $NEW_PATH #create new dir
-cp $SOURCE_PATH/**/* $NEW_PATH #copy source component to new path
-mv $NEW_PATH/$SOURCE_NAME.jsx $NEW_PATH/$NEW_NAME.jsx #update file name
-mv $NEW_PATH/$SOURCE_NAME.spec.jsx $NEW_PATH/$NEW_NAME.spec.jsx #update test file name
-grep $SOURCE_NAME $NEW_PATH -lR | xargs sed -i s/$SOURCE_NAME/$NEW_NAME/g #update file contents
+echo based on $TEMPLATE_NAME component in $TEMPLATE_PATH
+
+# copy files
+mkdir -p $NEW_PATH
+cp $TEMPLATE_PATH/* $NEW_PATH
+
+# rename files
+rename $TEMPLATE_NAME $NEW_NAME $NEW_PATH/*
+grep $TEMPLATE_NAME $NEW_PATH -lR | xargs sed -i s/$TEMPLATE_NAME/$NEW_NAME/g
