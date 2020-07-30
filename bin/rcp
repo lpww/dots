@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# react copy
+
 # bootstrap a new component by using an existing one as a template
 # useful for generating component boilerplate and folder structure
 

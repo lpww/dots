@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# react move
+
 # move and rename a component while retaining folder structure and all files
 # useful when refactoring
 

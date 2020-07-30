@@ -58,8 +58,6 @@ SETUVAR _fish_abbr_piager:sudo\x20openvpn\x20\x2d\x2dconfig\x20/etc/openvpn/clie
 SETUVAR _fish_abbr_piauk:sudo\x20openvpn\x20\x2d\x2dconfig\x20/etc/openvpn/client/UK_London\x2econf
 SETUVAR _fish_abbr_piauseast:sudo\x20openvpn\x20\x2d\x2dconfig\x20/etc/openvpn/client/US_East\x2econf
 SETUVAR _fish_abbr_piauswest:sudo\x20openvpn\x20\x2d\x2dconfig\x20/etc/openvpn/client/US_West\x2econf
-SETUVAR _fish_abbr_rrc:react\x2drefactor\x2dcopy
-SETUVAR _fish_abbr_rrm:react\x2drefactor\x2dmove
 SETUVAR _fish_abbr_v:vim
 SETUVAR _fish_abbr_wttr:curl\x20http\x3a//wttr\x2ein/\x5c\x7e
 SETUVAR _fish_abbr_xdd:xrandr\x20\x2d\x2doutput\x20HDMI1\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP2\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20eDP1\x20\x2d\x2dauto\x20\x2d\x2dprimary
