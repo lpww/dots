@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '~/crayolo/walls/mattd.jpg' 
+feh --no-fehbg --bg-fill /home/thomas/crayolo/walls/mattd.jpg
