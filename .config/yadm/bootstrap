@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# install manjaro repo packages
+# install manjaro packages
 sudo pacman -S \
   alacritty \
   dmenu \
@@ -20,13 +20,15 @@ sudo pacman -S \
   xreader \
   xsel \
   xss-lock \
-  yay 
+  yay
 
 # install aur packages
-yay -S antibody handlr-bin ripgrep
+yay -S \
+  handlr-bin \
+  ripgrep
 
 # install colours
 git clone https://github.com/dkeg/crayolo.git ~/crayolo
 
-# set zsh as default shell
+# set fish as default shell
 chsh -s /bin/fish
