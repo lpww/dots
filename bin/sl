@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# stream a link
+
+URL=${1}
+QUALITY=${2:-best}
+
+streamlink -p mpv $URL $QUALITY
