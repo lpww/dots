@@ -9,14 +9,15 @@ sudo pacman -S \
   feh \
   fish \
   git \
+  mpv \
   parcellite \
   pdfgrep \
   ruby \
   slock \
+  streamlink \
   trayer \
   tree \
   vim \
-  vlc \
   xreader \
   xsel \
   xss-lock \
