@@ -15,6 +15,7 @@ sudo pacman -S \
   ruby \
   slock \
   streamlink \
+  tldr \
   trayer \
   tree \
   vim \
