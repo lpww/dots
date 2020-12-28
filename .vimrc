@@ -29,6 +29,7 @@ endif
 call plug#begin('~/.vim/bundle')
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'jparise/vim-graphql'
 Plug 'dag/vim-fish'
 " Plug 'rust-lang/rust.vim'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
