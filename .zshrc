@@ -146,6 +146,14 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc # added to fish
 #local bin
 PATH=$PATH:/usr/local/bin # added to fish
 
+#xbs
+# source ~/.xbs/xbs_help_profile
+# source ~/.xbs/xbs_platform_tunnel
+# source ~/.xbs/xbs_redtrac_tunnel_profile
+# source ~/.xbs/xbs_tagging_tunnel_profile
+# source ~/.xbs/xbs_tf_profile
+# source ~/.xbs/xbs_tpiq_tunnel_profile
+
 #nvm
  export NVM_DIR="$HOME/.nvm"
  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
