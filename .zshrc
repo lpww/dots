@@ -140,11 +140,11 @@ source <(antibody init)
 #plugins
 antibody bundle < ~/.zsh_plugins
 
-#ripgrep config path
-export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc # added to fish
-
 #local bin
 PATH=$PATH:/usr/local/bin # added to fish
+
+#ripgrep config path
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc # added to fish
 
 #xbs
 # source ~/.xbs/xbs_help_profile
@@ -164,6 +164,9 @@ PATH=$PATH:/usr/local/bin # added to fish
 #ruby
 export GEM_HOME=$HOME/.gem
 PATH=$PATH:$(ruby -r rubygems -e "puts Gem.user_dir")/bin
+
+#ssh-agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 #the bin in the home directory should take priority
 PATH=$HOME/bin:$PATH # added to fish
