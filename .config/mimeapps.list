@@ -20,3 +20,5 @@ x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
 x-scheme-handler/ftp=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/msteams=teams.desktop
