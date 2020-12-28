@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export EDITOR:vim
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/thomas/\x2eripgreprc
+SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/thomas/\x2elocal/share/z/data
