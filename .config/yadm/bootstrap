@@ -10,6 +10,7 @@ sudo pacman -S \
   feh \
   fish \
   git \
+  gnome-screenshot
   mpv \
   network-manager-applet \
   numlockx \
