@@ -11,30 +11,22 @@ sudo pacman -S \
   fish \
   git \
   gnome-screenshot
-  gsimplecal \
   mpv \
   network-manager-applet \
   numlockx \
   pamac-all \
   parcellite \
   pdfgrep \
-  picom \
   polkit-gnome \
   polkit\
   ruby \
   slock \
   streamlink \
-  sxhkd \
-  termite \
-  thunar \
   tldr \
   tree \
-  variety \
   vim \
-  volumeicon \
   xfce4-notifyd \
   xfce4-power-manager \
-  xfce4-taskmanager \
   xreader \
   xsel \
   xss-lock \
@@ -42,8 +34,16 @@ sudo pacman -S \
 
 # install aur packages
 yay -S \
+  gsimplecal \
   handlr-bin \
-  ripgrep
+  picom \
+  ripgrep \
+  sxhkd \
+  termite \
+  thunar \
+  variety \
+  volumeicon \
+  xfce4-taskmanager
 
 # set fish as default shell
 chsh -s /bin/fish
