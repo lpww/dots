@@ -16,7 +16,6 @@ sudo pacman -S \
   slock \
   streamlink \
   tldr \
-  trayer \
   tree \
   vim \
   xreader \
