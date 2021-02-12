@@ -11,6 +11,7 @@ sudo pacman -S \
   fish \
   git \
   gnome-screenshot
+  gsimplecal \
   mpv \
   network-manager-applet \
   numlockx \
@@ -18,12 +19,14 @@ sudo pacman -S \
   parcellite \
   pdfgrep \
   picom \
-  polkit\
   polkit-gnome \
+  polkit\
   ruby \
   slock \
   streamlink \
   sxhkd \
+  termite \
+  thunar \
   tldr \
   tree \
   variety \
@@ -31,6 +34,7 @@ sudo pacman -S \
   volumeicon \
   xfce4-notifyd \
   xfce4-power-manager \
+  xfce4-taskmanager \
   xreader \
   xsel \
   xss-lock \
