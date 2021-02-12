@@ -79,7 +79,7 @@ augroup vimrcEx
   \   'css': ['prettier'],
   \}
   " ale fixing events
-  let g:ale_fix_on_save = 0
+  let g:ale_fix_on_save = 1
 augroup END
 
 " Turn Off Swap Files
