@@ -34,6 +34,7 @@ sudo pacman -S \
 
 # install aur packages
 yay -S \
+  fd \
   gsimplecal \
   handlr-bin \
   picom \
