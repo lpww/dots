@@ -16,20 +16,23 @@ function run {
 #run xrandr --output DVI-D-1 --right-of DVI-I-1 --auto
 #run xrandr --output HDMI2 --right-of HDMI1 --auto
 
-run "nm-applet"
-run "pamac-tray"
-run "variety"
-run "xfce4-power-manager"
-run "blueberry-tray"
-run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
-run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-picom -b  --config ~/.config/arco-dwm/picom.conf &
-run "numlockx on"
-run "volumeicon"
-run slstatus &
-sxhkd -c ~/.config/arco-dwm/sxhkd/sxhkdrc &
+run "nm-applet" #network manager system tray
+run "pamac-tray" #system update system tray
+run "variety" #wallpaper changer
+run "xfce4-power-manager" #power sources of computer and devices
+run "blueberry-tray" #bluetooth system tray
+run "/usr/lib/xfce4/notifyd/xfce4-notifyd" #notification service
+run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" #system wide priviledges
+picom -b  --config ~/.config/fancy-dwm/picom.conf & #handle transparent windows
+run "numlockx on" #numlock on at login screen
+run "volumeicon" #pavucontrol system tray
+run parcellite & #clipboard manager
+run slstatus & #dwm status bar
+run xset s 600 #lock screen after 10 minutes
+run xss-lock slock & # lock screen with slock
+sxhkd -c ~/.config/fancy-dwm/sxhkd/sxhkdrc & #load sxhkd (wm agnostic) shortcuts
 #run "nitrogen --restore"
-#run "conky -c $HOME/.config/arco-dwm/system-overview"
+#run "conky -c $HOME/.config/fancy-dwm/system-overview"
 #you can set wallpapers in themes as well
 #feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 
