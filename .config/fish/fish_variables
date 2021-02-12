@@ -96,4 +96,4 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:bryellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/10\x2e23\x2e1/bin\x1e/home/thomas/bin\x1e/usr/local/bin
+SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/14\x2e15\x2e5/bin\x1e/home/thomas/bin\x1e/usr/local/bin
