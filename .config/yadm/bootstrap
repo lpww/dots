@@ -3,6 +3,7 @@
 # install manjaro packages
 sudo pacman -S \
   alacritty \
+  blueberry \
   dmenu \
   docker \
   docker-compose \
@@ -10,14 +11,25 @@ sudo pacman -S \
   fish \
   git \
   mpv \
+  network-manager-applet \
+  numlockx \
+  pamac-all \
   parcellite \
   pdfgrep \
+  picom \
+  polkit\
+  polkit-gnome \
   ruby \
   slock \
   streamlink \
+  sxhkd \
   tldr \
   tree \
+  variety \
   vim \
+  volumeicon \
+  xfce4-notifyd \
+  xfce4-power-manager \
   xreader \
   xsel \
   xss-lock \
@@ -27,9 +39,6 @@ sudo pacman -S \
 yay -S \
   handlr-bin \
   ripgrep
-
-# install colours
-git clone https://github.com/dkeg/crayolo.git ~/crayolo
 
 # set fish as default shell
 chsh -s /bin/fish
