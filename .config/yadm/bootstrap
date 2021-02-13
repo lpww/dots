@@ -36,11 +36,13 @@ sudo pacman -S \
 
 # install aur packages
 yay -S \
+  bibata-cursor-theme \
   fd \
   gsimplecal \
   handlr-bin \
   picom \
   ripgrep \
+  sardi-icons \
   sxhkd \
   termite \
   thunar \
