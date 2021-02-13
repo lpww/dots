@@ -16,6 +16,7 @@ sudo pacman -S \
   numlockx \
   pamac-all \
   parcellite \
+  pavucontrol \
   pdfgrep \
   polkit-gnome \
   polkit\
