@@ -44,7 +44,7 @@ super + x
 
 #reload sxhkd:
 super + shift + s
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 #################################################################
 # screenshot
@@ -52,7 +52,7 @@ super + shift + s
 
 #area screenshot
 ctrl + Print
-    gnome-screenshot -a
+    sleep 0.2 && gnome-screenshot -a
 
 #################################################################
 # picom
@@ -132,9 +132,9 @@ XF86AudioStop
 
 #brightness up
 XF86MonBrightnessUp
-    xbacklight -inc 10
+    brightness up
 
 #brightness down
 XF86MonBrightnessDown
-    xbacklight -dec 10
+    brightness down
 
