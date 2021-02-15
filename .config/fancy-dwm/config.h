@@ -135,10 +135,8 @@ static Key keys[] = {
 	/* { MODKEY|ControlMask,         XK_Left,   shiftview,      {.i = -1 } }, */
 	/* { MODKEY|ControlMask,         XK_Up,     shiftview,      {.i =  1 } }, */
 	/* { MODKEY|ControlMask,         XK_Down,   shiftview,      {.i = -1 } }, */	
-	/* { MODKEY,						XK_Tab,    shiftview,      {.i =  1 } }, */
-	/* { MODKEY|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } }, */
-	/* { MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } }, */
-	/* { MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } }, */
+	{ MODKEY,						XK_Tab,    shiftview,      {.i =  1 } },
+	{ MODKEY|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } },
 };
 
 /* button definitions */
