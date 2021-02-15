@@ -34,8 +34,12 @@ super + shift + Escape
 super + Escape
     xkill
 
-#arcolinux-logout
+#slock
 super + x
+    slock
+
+#arcolinux-logout
+super + shift + x
     arcolinux-logout
 
 #################################################################
