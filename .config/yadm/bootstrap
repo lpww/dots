@@ -36,8 +36,6 @@ sudo pacman -S \
 
 # install aur packages
 yay -S \
-  arcolinux-logout-git \
-  arcolinux-logout-themes-git \
   bibata-cursor-theme \
   fd \
   gsimplecal \
