@@ -62,11 +62,6 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
-#define XF86AudioMute 0x1008ff12
-#define XF86AudioLowerVolume 0x1008ff11
-#define XF86AudioRaiseVolume 0x1008ff13
-#define XF86MonBrightnessDown 0x1008ff03
-#define XF86MonBrightnessUp 0x1008ff02
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -80,15 +75,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
-static const char *cmdbrightnessdown[]  = { "brightness", "down", NULL };
-static const char *cmdbrightnessup[]  = { "brightness", "up", NULL };
-static const char *cmdsounddown[]  = { "amixer", "-q", "sset", "Master", "5%-", NULL };
-static const char *cmdsoundtoggle[]  = { "amixer", "-q", "sset", "Master", "toggle", NULL };
-static const char *cmdsoundup[]  = { "amixer", "-q", "sset", "Master", "5%+", NULL };
+/* static const char *cmdbrightnessdown[]  = { "brightness", "down", NULL }; */
+/* static const char *cmdbrightnessup[]  = { "brightness", "up", NULL }; */
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
-static const char *termcmd[]  = { "termite", NULL };
-/* static const char *cmdlock[]  = { "slock", NULL }; */
 
 #include "selfrestart.c"
 #include "shiftview.c"
@@ -97,7 +87,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
   /* default keys */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	/* { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } }, */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -154,12 +144,12 @@ static Key keys[] = {
 	/* { MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } }, */
 
   /* custom shortcuts */
-{ ControlMask,                  XK_Print,  spawn,          SHCMD("sleep 0.2; gnome-screenshot -a") },
-	{ 0,                            XF86AudioMute,             spawn,          {.v = cmdsoundtoggle } },
-	{ 0,                            XF86AudioRaiseVolume,      spawn,          {.v = cmdsoundup } },
-	{ 0,                            XF86AudioLowerVolume,      spawn,          {.v = cmdsounddown } },
-	{ 0,                            XF86MonBrightnessDown,     spawn,          {.v = cmdbrightnessdown } },
-	{ 0,                            XF86MonBrightnessUp,       spawn,          {.v = cmdbrightnessup } },
+/* { ControlMask,                  XK_Print,  spawn,          SHCMD("sleep 0.2; gnome-screenshot -a") }, */
+	/* { 0,                            XF86AudioMute,             spawn,          {.v = cmdsoundtoggle } }, */
+	/* { 0,                            XF86AudioRaiseVolume,      spawn,          {.v = cmdsoundup } }, */
+	/* { 0,                            XF86AudioLowerVolume,      spawn,          {.v = cmdsounddown } }, */
+	/* { 0,                            XF86MonBrightnessDown,     spawn,          {.v = cmdbrightnessdown } }, */
+	/* { 0,                            XF86MonBrightnessUp,       spawn,          {.v = cmdbrightnessup } }, */
 };
 
 /* button definitions */
