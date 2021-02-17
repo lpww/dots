@@ -4,3 +4,13 @@ if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
+
+# use pywal fish theme if it's found
+if test -e ~/.cache/wal/colors.fish
+    source ~/.cache/wal/colors.fish
+end
+
+# use pywal terminal theme if it's found
+if test -e ~/.cache/wal/sequences
+  cat ~/.cache/wal/sequences
+end
