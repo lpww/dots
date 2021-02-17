@@ -103,6 +103,30 @@ alt + Down
     variety --resume
 
 #################################################################
+#variety keys with pywal
+#################################################################
+
+#wallpaper trash
+alt + shift + t
+    variety -t && cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt | xargs wal -i
+
+#wallpaper next
+alt + shift + n
+    variety -n && cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt | xargs wal -i
+
+#wallpaper previous
+alt + shift + p
+    variety -p && cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt | xargs wal -i
+
+#wallpaper favorite
+alt + shift + f
+    variety -f && cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt | xargs wal -i
+
+#wallpaper update
+alt + shift + u
+    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#################################################################
 # multimedia
 #################################################################
 
