@@ -31,6 +31,7 @@ run slstatus & #dwm status bar
 run xset s 600 #lock screen after 10 minutes
 run xss-lock slock & # lock screen with slock
 sxhkd -c ~/.config/fancy-dwm/sxhkd/sxhkdrc & #load sxhkd (wm agnostic) shortcuts
+run wal -R #restore the last used pywal theme
 #run "nitrogen --restore"
 #run "conky -c $HOME/.config/fancy-dwm/system-overview"
 #you can set wallpapers in themes as well
