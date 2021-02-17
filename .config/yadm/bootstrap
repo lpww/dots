@@ -41,6 +41,7 @@ yay -S \
   gsimplecal \
   handlr-bin \
   picom \
+  python-pywal \
   ripgrep \
   sardi-icons \
   sxhkd \
