@@ -31,8 +31,6 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'jparise/vim-graphql'
 Plug 'dag/vim-fish'
-" Plug 'rust-lang/rust.vim'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -43,7 +41,10 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'christoomey/vim-system-copy'
+Plug 'jeffkreeftmeijer/vim-dim'
 call plug#end()
+
+colorscheme dim " load colorscheme
 
 augroup vimrcEx
   autocmd!
@@ -82,7 +83,7 @@ augroup vimrcEx
   let g:ale_fix_on_save = 1
 augroup END
 
-" Turn Off Swap Files
+" disable swap files
 " ===================
 set noswapfile                  " Disable .swp files
 set nobackup                    " Disable ~ backup files
@@ -111,9 +112,8 @@ set list listchars=tab:»·,trail:·,nbsp:·
 
 " use one space, not two, after punctuation
 set nojoinspaces
-
 " make it obvious where 80 characters is
-set textwidth=80
+set textwidth=120
 set colorcolumn=+1
 
 " numbers
@@ -142,12 +142,6 @@ filetype plugin indent on
 " open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" highlight current cursor line and column
-set cursorline
-highlight cursorline cterm=NONE ctermbg=8 ctermfg=NONE
-set cursorcolumn
-highlight cursorcolumn cterm=NONE ctermbg=8 ctermfg=NONE
 
 " set the colorcolumn to dark
 highlight ColorColumn ctermbg=1
