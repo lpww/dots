@@ -70,7 +70,7 @@ SETUVAR _fish_abbr_yt:yarn\x20test
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:876058
-SETUVAR fish_color_comment:bab7b5
+SETUVAR fish_color_comment:3b434f
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
 SETUVAR fish_color_end:6f7f71
