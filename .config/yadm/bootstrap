@@ -3,6 +3,7 @@
 # install manjaro packages
 sudo pacman -S \
   alacritty \
+  amfora \
   arc-gtk-theme \
   blueberry \
   dmenu \
