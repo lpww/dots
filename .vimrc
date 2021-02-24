@@ -41,10 +41,10 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'christoomey/vim-system-copy'
-Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'dylanaraps/wal.vim'
 call plug#end()
 
-colorscheme dim " load colorscheme
+colorscheme wal " load colorscheme
 
 augroup vimrcEx
   autocmd!
