@@ -144,6 +144,10 @@ filetype plugin indent on
 set splitbelow
 set splitright
 
+" highlight current column
+set cursorcolumn
+highlight cursorcolumn cterm=NONE ctermbg=8 ctermfg=NONE
+
 " set the colorcolumn to dark
 highlight ColorColumn ctermbg=1
 
