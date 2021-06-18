@@ -27,6 +27,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+Plug 'hashivim/vim-terraform'
 Plug 'https://tildegit.org/sloum/gemini-vim-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
