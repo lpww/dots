@@ -44,6 +44,7 @@ Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'christoomey/vim-system-copy'
 Plug 'dylanaraps/wal.vim'
+Plug 'etdev/vim-hexcolor.git'
 call plug#end()
 
 colorscheme wal " load colorscheme
@@ -66,7 +67,9 @@ augroup vimrcEx
   " Limit linters used
   let g:ale_linters_explicit = 1 " only run linters specifically configured
   let g:ale_linters = {
-  \  'javascript': ['eslint'],
+  \   'typescriptreact': ['eslint'],
+  \   'typescript': ['eslint'],
+  \   'javascript': ['eslint'],
   \}
   " ale linting events
   set updatetime=1000
@@ -78,6 +81,8 @@ augroup vimrcEx
 
   " Limit fixers used
   let g:ale_fixers = {
+  \   'typescriptreact': ['prettier'],
+  \   'typescript': ['prettier'],
   \   'javascript': ['prettier'],
   \   'css': ['prettier'],
   \}
