@@ -12,13 +12,11 @@
 	username = lpww
 	helper = /usr/lib/git-core/git-credential-libsecret
 
-[includeI "itdir:~/code/nearform/xbs/"]
-  path = ~/code/nearform/xbs/.gitconfig
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [pull]
 	rebase = false
