@@ -85,6 +85,7 @@ augroup vimrcEx
   \   'typescript': ['prettier'],
   \   'javascript': ['prettier'],
   \   'css': ['prettier'],
+  \   'json': ['prettier'],
   \}
   " ale fixing events
   let g:ale_fix_on_save = 1
