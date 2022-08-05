@@ -8,7 +8,7 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/thomas/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/thomas/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/thomas\x24
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_bat:echo\x20\x28cat\x20/sys/class/power_supply/BAT0/capacity\x29\x22\x25\x22
 SETUVAR _fish_abbr_bd:brightness\x20down
 SETUVAR _fish_abbr_bu:brightness\x20up
@@ -58,10 +58,12 @@ SETUVAR _fish_abbr_piauswest:sudo\x20openvpn\x20\x2d\x2dconfig\x20/etc/openvpn/c
 SETUVAR _fish_abbr_pro_2D_rds_2D_develop:xbstunnel\x20\x2dP\x20pro\x20\x2dp\x209400
 SETUVAR _fish_abbr_v:vim
 SETUVAR _fish_abbr_wttr:curl\x20http\x3a//wttr\x2ein/\x5c\x7e
-SETUVAR _fish_abbr_xa:xrandr\x20\x2d\x2dauto
+SETUVAR _fish_abbr_xa:xrandr\x20\x2d\x2dauto\x20\x26\x26\x20xset\x20s\x20on\x20\x26\x26\x20xset\x20s\x20600
 SETUVAR _fish_abbr_xdd:xrandr\x20\x2d\x2dauto\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20HDMI1\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP2\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20eDP1\x20\x2d\x2dauto\x20\x2d\x2dprimary
-SETUVAR _fish_abbr_xde:xrandr\x20\x2d\x2doutput\x20DP1\x2d1\x20\x2d\x2dauto\x20\x2d\x2dprimary\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP1\x2d2\x20\x2d\x2dauto\x20\x2d\x2dprimary\x20\x2d\x2dright\x2dof\x20DP1\x2d1\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20eDP1\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP1\x2d1\x20\x2d\x2dauto\x20\x2d\x2dprimary
+SETUVAR _fish_abbr_xde:xrandr\x20\x2d\x2doutput\x20DP1\x2d1\x20\x2d\x2dauto\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP1\x2d2\x20\x2d\x2dauto\x20\x2d\x2dright\x2dof\x20DP1\x2d1\x20\x26\x26\x20xset\x20s\x20600
 SETUVAR _fish_abbr_xds:xrandr\x20\x2d\x2doutput\x20eDP1\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20HDMI1\x20\x2d\x2dauto\x20\x2d\x2dprimary\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP2\x20\x2d\x2doff
+SETUVAR _fish_abbr_xld:xrandr\x20\x2d\x2doutput\x20eDP1\x20\x2d\x2doff\x20\x26\x26\x20xrandr\x20\x2d\x2doutput\x20DP1\x2d1\x20\x2d\x2dprimary\x20\x26\x26\x20xset\x20s\x20600
+SETUVAR _fish_abbr_xle:xrandr\x20\x2d\x2doutput\x20eDP1\x20\x2d\x2dauto\x20\x2d\x2dprimary\x20\x26\x26\x20xset\x20s\x20600
 SETUVAR _fish_abbr_ya:yarn\x20add
 SETUVAR _fish_abbr_yi:yarn\x20install
 SETUVAR _fish_abbr_yr:yarn\x20run
@@ -97,4 +99,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:6f7f71\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/16\x2e13\x2e1/bin\x1e/home/thomas/bin\x1e/usr/local/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
