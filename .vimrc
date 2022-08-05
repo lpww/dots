@@ -28,6 +28,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'https://tildegit.org/sloum/gemini-vim-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
@@ -44,7 +45,6 @@ Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'christoomey/vim-system-copy'
 Plug 'dylanaraps/wal.vim'
-Plug 'etdev/vim-hexcolor.git'
 call plug#end()
 
 colorscheme wal " load colorscheme
