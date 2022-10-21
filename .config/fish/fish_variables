@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:vim
+SETUVAR --export --path GOPATH:/home/thomas/go
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/thomas/\x2eripgreprc
 SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
 SETUVAR ZO_CMD:zo
@@ -70,24 +71,29 @@ SETUVAR _fish_abbr_yr:yarn\x20run
 SETUVAR _fish_abbr_yre:rm\x20\x2drf\x20node_modules\x20\x26\x26\x20yarn\x20install
 SETUVAR _fish_abbr_ys:yarn\x20start
 SETUVAR _fish_abbr_yt:yarn\x20test
+SETUVAR _fish_abbr_zb:zig\x20build
+SETUVAR _fish_abbr_zbr:zig\x20build\x20run
+SETUVAR _fish_abbr_zbt:zig\x20build\x20test
+SETUVAR _fish_abbr_zie:zig\x20init\x2dexe
+SETUVAR _fish_abbr_zil:zig\x20init\x2dlib
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:876058
-SETUVAR fish_color_comment:3b434f
+SETUVAR fish_color_command:b16c7f
+SETUVAR fish_color_comment:55565b
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:6f7f71
+SETUVAR fish_color_end:92ab75
 SETUVAR fish_color_error:ff0000
-SETUVAR fish_color_escape:84787d
+SETUVAR fish_color_escape:746081
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
 SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
-SETUVAR fish_color_operator:84787d
-SETUVAR fish_color_param:84787d
-SETUVAR fish_color_quote:6f7f71
-SETUVAR fish_color_redirection:84787d
+SETUVAR fish_color_operator:746081
+SETUVAR fish_color_param:746081
+SETUVAR fish_color_quote:92ab75
+SETUVAR fish_color_redirection:746081
 SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
@@ -96,8 +102,8 @@ SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
-SETUVAR fish_pager_color_description:6f7f71\x1eyellow
+SETUVAR fish_pager_color_description:92ab75\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
+SETUVAR fish_user_paths:/home/thomas/go/bin\x1e/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
