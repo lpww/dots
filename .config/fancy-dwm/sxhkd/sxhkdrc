@@ -22,9 +22,9 @@ super + c
 super + shift + f
       firefox
 
-#termite
+#alacritty
 super + shift + Return
-    termite
+    alacritty
 
 #xcfe4-taskmanager
 super + shift + Escape
@@ -132,15 +132,15 @@ alt + shift + u
 
 #raises volume
 XF86AudioRaiseVolume
-    amixer set Master 10%+
+    pamixer --increase 10
 
 #lowers volume
 XF86AudioLowerVolume
-    amixer set Master 10%-
+    pamixer --decrease 10
 
 #mute
 XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
+    pamixer --toggle-mute
 
 #play
 XF86AudioPlay
