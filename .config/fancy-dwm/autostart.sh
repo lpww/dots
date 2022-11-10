@@ -8,8 +8,7 @@ function run {
 }
 
 # policy kit
-# run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1" #system wide priviledges
-exec /usr/lib/polkit-1/polkit-agent-helper-1 & # system wide priviledges
+run "/usr/libexec/polkit-gnome-authentication-agent-1" # system wide priviledges
 
 # status bar / systray
 run slstatus & #dwm status bar
