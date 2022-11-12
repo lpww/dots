@@ -32,7 +32,7 @@ run sxhkd -c ~/.config/fancy-dwm/sxhkd/sxhkdrc & #load sxhkd (wm agnostic) short
 
 # theme
 run wal -R #restore the last used pywal theme
-#feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+feh --bg-fill ~/backgrounds/dkeg-vans.jpg
 
 # register screen locker
 run xss-lock slock & # lock screen with slock
