@@ -21,7 +21,7 @@ run "xfce4-power-manager" #power sources of computer and devices
 # run "volumeicon" #pavucontrol system tray
 
 #notifications
-# run "/usr/lib/xfce4/notifyd/xfce4-notifyd" #notification service
+run dunst &
 
 # transparent windows
 run picom -b  --config ~/.config/fancy-dwm/picom.conf & #handle transparent windows
