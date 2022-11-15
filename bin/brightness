@@ -1,27 +1,25 @@
 #!/bin/bash
-# if [ "$EUID" -ne 0 ]
-# then
-#   echo "Please run $0 as root"
-#   exit
-# fi
 
-bd=/sys/devices/pci0000:00/0000:00:02.0/drm/card*/card*-eDP-1/intel_backlight/brightness
-mbd=/sys/devices/pci0000:00/0000:00:02.0/drm/card*/card*-eDP-1/intel_backlight/max_brightness
+# brightness
+# a script to increase/decrease brightness
+# to run it without sudo, you must add a udev rule to make the brightness file writable
+# we can use the exact same udev rule as acpilight: https://gitlab.com/wavexx/acpilight
 
-bdv=$(cat $bd)
-mbdv=$(cat $mbd)
+brightness=/sys/class/backlight/intel_backlight/brightness
+max_brightness=/sys/class/backlight/intel_backlight/max_brightness
+
+brightness_value=$(cat $brightness)
+max_brightness_value=$(cat $max_brightness)
 
 echo $i
 
 case $1 in
   up)
-    echo $(( bdv + (mbdv / 15 ) )) > $bd
-    cat $bd
+    echo $(( brightness_value + (max_brightness_value / 15 ) )) > $brightness
   ;;
   down)
-    echo $(( bdv - (mbdv / 15 ) )) > $bd
-    cat $bd
+    echo $(( brightness_value - (max_brightness_value / 15 ) )) > $brightness
   ;;
   *)
-  echo "$bdv"
+  echo "Invalid argument. Try \"up\" or \"down\""
 esac
