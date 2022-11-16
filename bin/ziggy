@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# ziggy
+# update zig to the latest version
+# follows the master branch
+# assumes x86_64 and linux
+
+set -e
+
+newver=$(curl -s "https://ziglang.org/download/index.json" | jq -r '.master.version')
+oldver=$(zig version)
+
+echo current version: $oldver
+echo new version: $newver
+
+if [ "$oldver" = "$newver" ]; then
+    echo already up to date
+else
+    echo 'downloading tarball'
+    curl $(curl -s "https://ziglang.org/download/index.json" | jq -r '.["master"]|.["x86_64-linux"].tarball') -o zig.tar.xz
+    tar xf zig.tar.xz --strip-components 1
+
+    echo 'uninstalling old version'
+    sudo rm -rf /usr/bin/zig
+    sudo rm -rf /usr/lib/zig
+
+    echo 'installing new version'
+    sudo cp ./zig /usr/bin/zig
+    sudo cp -r ./lib/ /usr/lib/zig
+
+    echo 'cleaning up files'
+    rm -rf zig.tar.xz zig LICENSE lib langref.html docs
+fi
