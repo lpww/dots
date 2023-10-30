@@ -34,4 +34,5 @@ run xss-lock slock & # lock screen with slock
 
 # audio
 run pipewire &
+run wireplumber &
 run pipewire-pulse &
