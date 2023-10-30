@@ -1,4 +1,3 @@
-
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -18,14 +17,8 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'lua_ls', 'clangd', 'gopls', 'graphql', 'zls', 'tailwindcss'},
-  handlers = {
-    lsp_zero.default_setup,
-    lua_ls = function()
-      local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
-    end,
-  }
+  ensure_installed = {'tsserver', 'gopls', 'zls'},
+  handlers = { lsp_zero.default_setup }
 })
 
 local cmp = require('cmp')
