@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
   }
 
   use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use({ "daschw/leaf.nvim", as = 'leaf' })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
@@ -20,6 +21,11 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
 
   use('mbbill/undotree')
+
+  use('tpope/vim-commentary')
+  use('tpope/vim-repeat')
+  use('tpope/vim-unimpaired')
+  use('tpope/vim-surround')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',

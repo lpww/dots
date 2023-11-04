@@ -11,4 +11,4 @@ function SetColor(color)
 
 end
 
-SetColor()
+SetColor('leaf')
