@@ -17,9 +17,9 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'gopls', 'zls'},
+  ensure_installed = {'tsserver'},
   handlers = { lsp_zero.default_setup }
-})
+  })
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
