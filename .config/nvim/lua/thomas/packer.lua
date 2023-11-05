@@ -17,8 +17,6 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
-  use('theprimeagen/harpoon')
-
   use('mbbill/undotree')
 
   use('tpope/vim-commentary')
