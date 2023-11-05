@@ -1,9 +1,5 @@
-require('rose-pine').setup({
-	disable_background  = true
-})
-
 function SetColor(color)
-	color = color or "rose-pine"
+	color = color or "leaf"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -11,4 +7,4 @@ function SetColor(color)
 
 end
 
-SetColor('leaf')
+SetColor()
