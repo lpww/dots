@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
   use('tpope/vim-unimpaired')
   use('tpope/vim-surround')
 
+  use('vim-scripts/ReplaceWithRegister')
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
