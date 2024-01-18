@@ -1,0 +1,17 @@
+import = ["/home/thomas/.cache/wal/colors-nodim-alacritty.toml"]
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 18.0
+
+[font.normal]
+family = "DejaVu Sans Mono"
+style = "Book"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+opacity = 0.92
