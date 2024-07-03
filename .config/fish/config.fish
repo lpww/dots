@@ -19,3 +19,9 @@ end
 if test -e ~/.cache/wal/sequences
   cat ~/.cache/wal/sequences
 end
+
+# use direnv if it's found
+
+if test -x /usr/bin/direnv
+  direnv hook fish | source
+end

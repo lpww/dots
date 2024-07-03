@@ -114,4 +114,4 @@ SETUVAR fish_pager_color_description:92ab75\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/thomas/go/bin\x1e/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
+SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/20\x2e14\x2e0/bin\x1e/home/thomas/go/bin\x1e/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
