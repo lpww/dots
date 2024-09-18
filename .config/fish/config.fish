@@ -1,13 +1,9 @@
-# automatically run startx if we are in the default tty
-if test (tty) = "/dev/tty1"
-  pgrep dwm || startx
-end
+# everything below this only executes in interactive mode
+status is-interactive || exit
 
 # install fisher if it's not found
 if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
+	  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update
 end
 
 # use pywal fish theme if it's found
@@ -21,7 +17,11 @@ if test -e ~/.cache/wal/sequences
 end
 
 # use direnv if it's found
-
-if test -x /usr/bin/direnv
+if command -q direnv
   direnv hook fish | source
+end
+
+# use zoxide if it's found
+if command -q zoxide
+  zoxide init fish | source
 end
