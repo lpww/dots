@@ -1,14 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:vim
+SETUVAR --export EDITOR:nvim
 SETUVAR --export --path GOPATH:/home/thomas/go
-SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/thomas/\x2eripgreprc
+SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/thomas/\x2eripgreprc
 SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
-SETUVAR ZO_CMD:zo
-SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/home/thomas/\x2elocal/share/z/data
-SETUVAR Z_DATA_DIR:/home/thomas/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/home/thomas\x24
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_bat:echo\x2041\x25
 SETUVAR _fish_abbr_bd:brightness\x20down
@@ -16,7 +11,6 @@ SETUVAR _fish_abbr_bu:brightness\x20up
 SETUVAR _fish_abbr_dcp:docker\x20container\x20prune
 SETUVAR _fish_abbr_dsp:docker\x20system\x20prune
 SETUVAR _fish_abbr_dvp:docker\x20volume\x20prune
-SETUVAR _fish_abbr_fk:echo\x20hi\x20\x24RIPGREP_CONFIG_PATH
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gb:git\x20branch
 SETUVAR _fish_abbr_gc:git\x20commit
@@ -84,6 +78,11 @@ SETUVAR _fish_abbr_zbr:zig\x20build\x20run
 SETUVAR _fish_abbr_zbt:zig\x20build\x20test
 SETUVAR _fish_abbr_zie:zig\x20init\x2dexe
 SETUVAR _fish_abbr_zil:zig\x20init\x2dlib
+SETUVAR _fisher_jorgebucaran_2F_fish_2D_nvm_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_bang_2D_bang_files:\x7e/\x2econfig/fish/functions/__history_previous_command\x2efish\x1e\x7e/\x2econfig/fish/functions/__history_previous_command_arguments\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/plugin\x2dbang\x2dbang\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dbang\x2dbang\x1ejorgebucaran/fish\x2dnvm
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:b16c7f
@@ -114,4 +113,5 @@ SETUVAR fish_pager_color_description:92ab75\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/thomas/\x2econfig/nvm/20\x2e14\x2e0/bin\x1e/home/thomas/go/bin\x1e/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
+SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/home/thomas/\x2econfig/nvm/20\x2e14\x2e0/bin\x1e/home/thomas/go/bin\x1e/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
+SETUVAR nvm_default_version:lts
