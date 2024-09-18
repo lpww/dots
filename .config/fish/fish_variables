@@ -1,9 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:nvim
-SETUVAR --export --path GOPATH:/home/thomas/go
-SETUVAR --export --path RIPGREP_CONFIG_PATH:/Users/thomas/\x2eripgreprc
-SETUVAR --export SSH_AUTH_SOCK:/run/user/1000/ssh\x2dagent\x2esocket
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_bat:echo\x2041\x25
 SETUVAR _fish_abbr_bd:brightness\x20down
@@ -113,5 +109,4 @@ SETUVAR fish_pager_color_description:92ab75\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/home/thomas/\x2econfig/nvm/20\x2e14\x2e0/bin\x1e/home/thomas/go/bin\x1e/home/thomas/\x2econfig/nvm/14\x2e19\x2e0/bin\x1e/home/thomas/bin\x1e/usr/local/bin
-SETUVAR nvm_default_version:lts
+SETUVAR fish_user_paths:/Users/thomas/bin\x1e/usr/local/bin\x1e/opt/homebrew/bin
