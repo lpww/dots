@@ -45,9 +45,6 @@ abbr -a -- nt 'npm test'
 # vim
 abbr -a -- v 'vim'
 
-# wttr
-abbr -a -- wttr curl\ http://wttr.in/\\\~
-
 # xbps
 abbr -a -- xqd 'xbps-query -R'
 abbr -a -- xqf 'xbps-query -f'
