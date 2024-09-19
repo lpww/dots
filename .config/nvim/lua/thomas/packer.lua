@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
 
   use('vim-scripts/ReplaceWithRegister')
 
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
