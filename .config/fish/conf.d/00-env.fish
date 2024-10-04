@@ -21,3 +21,9 @@ set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/.ripgreprc
 
 # fish-nvm
 set -gx nvm_default_version lts
+
+# atac
+set -gx ATAC_MAIN_DIR $XDG_CONFIG_HOME/atac
+
+# bun
+set -gx BUN_INSTALL "$HOME/.bun"
