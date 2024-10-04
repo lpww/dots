@@ -172,3 +172,4 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 PATH=$HOME/bin:$PATH # added to fish
 export PATH
 
+. "/Users/thomas/.deno/env"
