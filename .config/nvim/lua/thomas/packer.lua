@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ "daschw/leaf.nvim", as = 'leaf' })
+  use({ 'daschw/leaf.nvim', as = 'leaf' })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
 
   use('vim-scripts/ReplaceWithRegister')
 
-  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+  use {'ellisonleao/glow.nvim', config = function() require('glow').setup() end}
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -46,6 +46,14 @@ return require('packer').startup(function(use)
 		  {'neovim/nvim-lspconfig'},
 		  {'williamboman/mason.nvim'},
 		  {'williamboman/mason-lspconfig.nvim'},
+      {
+        'zbirenbaum/copilot.lua',
+        -- cmd = 'Copilot',
+        -- event = 'InsertEnter',
+        -- config = function()
+        --   require('copilot').setup({})
+        -- end,
+      },
 
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
@@ -54,6 +62,13 @@ return require('packer').startup(function(use)
 		  {'saadparwaiz1/cmp_luasnip'},
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'hrsh7th/cmp-nvim-lua'},
+      {
+        'zbirenbaum/copilot-cmp',
+        after = { 'copilot.lua' },
+        config = function()
+          require('copilot_cmp').setup()
+        end,
+      },
 
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
