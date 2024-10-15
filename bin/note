@@ -1,14 +1,16 @@
 #!/bin/sh
 
 # note
-# create a new markdown note
+# create a new markdown note and open it
 
 NOTE_DIR="$HOME/notes";
-NOTE_NAME="$1";
+NOTE_TITLE="$1";
+NOTE_PATH="$NOTE_DIR/$NOTE_TITLE.md";
 
 # without timestamp
-nvim "${NOTE_DIR}/${NOTE_NAME}.md";
+echo "## $NOTE_TITLE" >> $NOTE_PATH
+nvim $NOTE_PATH;
 
 # with timestamp
 # TIMESTAMP="$(date +%Y-%m-%d_%H:%M)";
-# nvim "${NOTE_DIR}/${TIMESTAMP}-${NOTE_NAME}.md";
+# nvim "${NOTE_DIR}/${TIMESTAMP}-${NOTE_TITLE}.md";
