@@ -26,4 +26,8 @@ set -gx nvm_default_version lts
 set -gx ATAC_MAIN_DIR $XDG_CONFIG_HOME/atac
 
 # bun
-set -gx BUN_INSTALL "$HOME/.bun"
+set -gx BUN_INSTALL $HOME/.bun
+
+# zvm
+set -gx ZVM_PATH $XDG_CONFIG_HOME/zvm
+set -gx ZVM_INSTALL $HOME/.zvm/self
