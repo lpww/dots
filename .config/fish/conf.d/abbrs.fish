@@ -1,3 +1,6 @@
+# !!
+abbr -a !! --position anywhere --function last_history_item
+
 # brightness
 abbr -a -- bu 'brightness up'
 abbr -a -- bd 'brightness down'
