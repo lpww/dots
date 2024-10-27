@@ -45,6 +45,10 @@ abbr -a -- ni 'npm install'
 abbr -a -- nli 'npm link'
 abbr -a -- nt 'npm test'
 
+# void
+abbr -a -- vc 'void-clean'
+abbr -a -- vu 'void-update'
+
 # vim
 abbr -a -- v 'vim'
 

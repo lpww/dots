@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+# void-clean
+# clean void package artifacts from xbps and flatpak
+# requires sudo
+
+# void-clean: removing package cache
+echo "void-clean: removing xbps package cache"
+sudo xbps-remove -O
+
+# void-clean: removing orphaned packages
+echo "void-clean: removing xbps orphaned packages"
+sudo xbps-remove -o
+
+# void-clean: removing old kernals
+echo "void-clean: removing old kernals"
+sudo vkpurge rm all
+
+# void-clean: removing unused flatpak runtimes
+echo "void-clean: removing unused flatpak runtimes"
+flatpak uninstall --unused
