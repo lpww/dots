@@ -6,12 +6,16 @@ set -e
 # update void system packages from xbps, void-packages, and flatpak
 # requires sudo
 
+# update flatpak packages
+echo "void-update: updating flatpak package"
+flatpak update
+
 # update xbps packages
 echo "void-update: updating xbps packages"
 sudo xbps-install -Su
 
 # update void-packages packages
-echo "void-update: updating void-packages packages"
+echo "void-update: updating void-src packages"
 
 # pull the latest updates from void-packages repo
 cd ~/code/void-packages
@@ -20,10 +24,11 @@ git pull upstream master
 
 # build updated packages that are already installed on the system
 ./xbps-src update-local
+echo "run xi to install locally updated packages"
 
 # list and install updated packages that are already on the system
-./xbps-src show-sys-updates | xargs xi
+# ./xbps-src show-sys-updates | xargs xi
 
-# update flatpak packages
-echo "void-update: updating flatpak package"
-flatpak update
+# update grub after every update because I'm tired of having to chroot every time grub updates
+echo "void-update: updating grub"
+sudo update-grub
