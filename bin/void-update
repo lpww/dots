@@ -24,10 +24,9 @@ git pull upstream master
 
 # build updated packages that are already installed on the system
 ./xbps-src update-local
-echo "run xi to install locally updated packages"
 
-# list and install updated packages that are already on the system
-# ./xbps-src show-sys-updates | xargs xi
+# install newly built packages
+sudo xbps-install -u
 
 # update grub after every update because I'm tired of having to chroot every time grub updates
 echo "void-update: updating grub"
