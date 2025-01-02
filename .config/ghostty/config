@@ -1,5 +1,5 @@
 # match alacritty's cell width
-adjust-cell-width = -10%
+#adjust-cell-width = -10%
 
 # transparent background
 background-opacity = 0.92
@@ -11,8 +11,9 @@ cursor-style-blink = false
 shell-integration-features = no-cursor 
 
 # font
-font-family = Menlo
-font-size = 16.0
+font-family = DejaVu Sans Mono
+font-size = 18.0
+font-style = Book
 # only mac supports this for now
 font-thicken = true 
 
@@ -24,4 +25,4 @@ selection-invert-fg-bg = true
 
 # use pywal theme
 # dynamic home path not supported, I will need to manually change this for each device
-theme=/Users/thomas.treffry/.cache/wal/colors.ghostty
+theme="/home/thomas/.cache/wal/colors.ghostty"
