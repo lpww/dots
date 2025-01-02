@@ -3,7 +3,7 @@
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [font]
-size = 16.0
+size = 18.0
 
 [font.normal]
 family = "DejaVu Sans Mono"
