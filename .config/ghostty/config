@@ -26,3 +26,6 @@ selection-invert-fg-bg = true
 # use pywal theme
 # dynamic home path not supported, I will need to manually change this for each device
 theme="/home/thomas/.cache/wal/colors.ghostty"
+
+# disable window decorations
+window-decoration = false
