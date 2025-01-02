@@ -1,1 +1,27 @@
-theme="/Users/thomas.treffry/.cache/wal/colors.ghostty"
+# match alacritty's cell width
+adjust-cell-width = -10%
+
+# transparent background
+background-opacity = 0.92
+
+# solid block cursor
+cursor-style = block
+cursor-style-blink = false
+# prevent shell integration features from overwriting the cursor style set above
+shell-integration-features = no-cursor 
+
+# font
+font-family = Menlo
+font-size = 16.0
+# only mac supports this for now
+font-thicken = true 
+
+# mouse
+mouse-hide-while-typing = true
+
+# selection color
+selection-invert-fg-bg = true
+
+# use pywal theme
+# dynamic home path not supported, I will need to manually change this for each device
+theme=/Users/thomas.treffry/.cache/wal/colors.ghostty
