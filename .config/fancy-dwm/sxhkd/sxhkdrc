@@ -22,9 +22,9 @@ super + c
 super + shift + f
       firefox
 
-#alacritty
+#ghostty
 super + shift + Return
-    alacritty
+    ghostty
 
 #xcfe4-taskmanager
 super + shift + Escape
