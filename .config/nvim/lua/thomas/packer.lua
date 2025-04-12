@@ -46,14 +46,14 @@ return require('packer').startup(function(use)
 		  {'neovim/nvim-lspconfig'},
 		  {'williamboman/mason.nvim'},
 		  {'williamboman/mason-lspconfig.nvim'},
-      {
-        'zbirenbaum/copilot.lua',
+      -- {
+      --   'zbirenbaum/copilot.lua',
         -- cmd = 'Copilot',
         -- event = 'InsertEnter',
         -- config = function()
         --   require('copilot').setup({})
         -- end,
-      },
+      -- },
 
 		  -- Autocompletion
 		  {'hrsh7th/nvim-cmp'},
@@ -62,13 +62,13 @@ return require('packer').startup(function(use)
 		  {'saadparwaiz1/cmp_luasnip'},
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'hrsh7th/cmp-nvim-lua'},
-      {
-        'zbirenbaum/copilot-cmp',
-        after = { 'copilot.lua' },
-        config = function()
-          require('copilot_cmp').setup()
-        end,
-      },
+      -- {
+      --   'zbirenbaum/copilot-cmp',
+      --   after = { 'copilot.lua' },
+      --   config = function()
+      --     require('copilot_cmp').setup()
+      --   end,
+      -- },
 
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
