@@ -16,6 +16,7 @@ run parcellite & # clipboard manager
 run "nm-applet" # network manager system tray
 run "xfce4-power-manager" # power sources of computer and devices
 run "blueman-applet" # bluetooth manager
+run "syncthingtray"
 
 # notifications
 run dunst &
