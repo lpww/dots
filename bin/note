@@ -2,6 +2,7 @@
 
 # note
 # create a new markdown note and open it
+# eg note my-note-name
 
 NOTE_DIR="$HOME/notes";
 NOTE_TITLE="$1";
