@@ -19,9 +19,6 @@ set -gx EDITOR nvim
 # ripgrep
 set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/.ripgreprc
 
-# fish-nvm
-set -gx nvm_default_version lts
-
 # atac
 set -gx ATAC_MAIN_DIR $XDG_CONFIG_HOME/atac
 
