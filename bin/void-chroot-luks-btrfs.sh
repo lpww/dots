@@ -5,11 +5,11 @@
 
 set -e
 
-cryptsetup open /dev/<the-encrypted-partition> crypt-drive
+sudo cryptsetup luksOpen /dev/sda2 encrypted_btrfs_partition
 # <supply passphrase when prompted>
 ls -l /dev/mapper/
 echo you should see crypt-drive listed in the above output
-mount -o subvol=@ /dev/mapper/crypt-drive /mnt
-xchroot /mnt
-echo you are not chrooted
+sudo mount /dev/mapper/encrypted_btrfs_partition -o subvol=@ /mnt
+echo chrooting...
+sudo xchroot /mnt
 ls -l
