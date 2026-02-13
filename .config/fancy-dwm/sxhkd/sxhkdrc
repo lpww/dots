@@ -38,9 +38,10 @@ super + Escape
 super + x
     slock
 
-#arcolinux-logout
-super + shift + x
-    arcolinux-logout
+#autorandr
+#auto select the correct autorandr profile
+super + a
+    autorandr -c
 
 #################################################################
 # sxhkd
