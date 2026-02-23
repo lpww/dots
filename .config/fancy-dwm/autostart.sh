@@ -29,7 +29,7 @@ run sxhkd -c ~/.config/fancy-dwm/sxhkd/sxhkdrc & # load sxhkd (wm agnostic) shor
 
 # theme
 run wal -R # restore the last used pywal theme
-feh --bg-fill ~/backgrounds/dkeg-vans.jpg
+feh --bg-fill ~/backgrounds/current-background.jpg
 
 # register screen locker
 run xss-lock slock & # lock screen with slock
