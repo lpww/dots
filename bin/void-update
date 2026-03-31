@@ -31,3 +31,4 @@ echo "void-update: updating void-src packages"
 # update grub after every update because I'm tired of having to chroot every time grub updates
 echo "void-update: updating grub"
 sudo update-grub
+sudo grub-mkconfig

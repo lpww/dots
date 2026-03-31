@@ -5,8 +5,8 @@
 # to run it without sudo, you must add a udev rule to make the brightness file writable
 # we can use the exact same udev rule as acpilight: https://gitlab.com/wavexx/acpilight
 
-brightness=/sys/class/backlight/intel_backlight/brightness
-max_brightness=/sys/class/backlight/intel_backlight/max_brightness
+brightness=/sys/class/backlight/amdgpu_bl0/brightness
+max_brightness=/sys/class/backlight/amdgpu_bl0/max_brightness
 
 brightness_value=$(cat $brightness)
 max_brightness_value=$(cat $max_brightness)
