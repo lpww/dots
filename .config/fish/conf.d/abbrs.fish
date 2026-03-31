@@ -14,7 +14,8 @@ abbr -a -- dvp 'docker volume prune'
 abbr -a -- ga 'git add'
 abbr -a -- gb 'git branch'
 abbr -a -- gc 'git commit'
-abbr -a -- gcb 'git rev-parse --abbrev-ref HEAD'
+abbr -a -- gbp 'git rev-parse --abbrev-ref HEAD' # git branch print (current)
+abbr -a -- gbc 'git rev-parse --abbrev-ref HEAD | pbcopy'
 abbr -a -- gch 'git checkout'
 abbr -a -- gcl git\ branch\ --merged\ \|\ grep\ -v\ \'\\\*\\\|master\\\|develop\'\ \|\ xargs\ -n\ 1\ git\ branch\ -d
 abbr -a -- gd 'git diff'
