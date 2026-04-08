@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'ts_ls', 'marksman'},
+  ensure_installed = {'marksman'},
   handlers = { lsp_zero.default_setup }
   })
 
