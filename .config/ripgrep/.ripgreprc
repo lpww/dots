@@ -5,8 +5,5 @@
 --type-add
 web:*.{html,css,js,jsx}*
 
-# Using glob patterns to include/exclude files or folders
---glob=!git/*
-
 # Use smart case
 --smart-case
