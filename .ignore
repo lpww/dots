@@ -1,0 +1,3 @@
+# inverse ignore logic workaround to include .github in ripgrep and fd results
+# both tools automatically read .ignore
+!.github
