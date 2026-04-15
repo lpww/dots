@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# pg-db-migrator
+# dumps a db from a source
+# then restores it to a new destination
+
+# example
+# pg-db-migrator $PG_SOURCE_URI $PG_DEST_URI
+
+# postgres connection uri format
+# postgresql://user:pass@host:5432/db
+
+set -e
+
+# inputs
+SOURCE_PG_URI=$1;
+DEST_PG_URI=$2
+
+# consts
+TMP_DUMP_FILE=$(mktemp)
+
+# dump from the source db
+pg_dump $SOURCE_PG_URI --verbose --clean --no-owner --no-privileges --format=custom > $TMP_DUMP_FILE
+
+# restore to the destination db
+pg_restore -d $DEST_PG_URI --verbose --clean --no-owner $TMP_DUMP_FILE
+
+# cleanup
+rm $TMP_DUMP_FILE
