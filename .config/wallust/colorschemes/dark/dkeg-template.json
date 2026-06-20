@@ -1,0 +1,25 @@
+{
+  "special":{
+    "background":"#bg",
+    "foreground":"#wht",
+    "cursor":"#bwht"
+  },
+  "colors":{
+    "color0":"#blk",
+    "color1":"#red",
+    "color2":"#grn",
+    "color3":"#ylw",
+    "color4":"#blu",
+    "color5":"#mag",
+    "color6":"#cyn",
+    "color7":"#wht",
+    "color8":"#bblk",
+    "color9":"#bred",
+    "color10":"#bgrn",
+    "color11":"#bylw",
+    "color12":"#bblu",
+    "color13":"#bmag",
+    "color14":"#bcyn",
+    "color15":"#bwht"
+  }
+}

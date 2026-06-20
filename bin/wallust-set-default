@@ -1,0 +1,62 @@
+#!/bin/bash
+# Set the default wallust theme for autostart
+# Usage: wallust-set-default THEME_NAME.json
+#    or: wallust-set-default /full/path/to/theme.json
+
+if [ -z "$1" ]; then
+    echo "Current default theme:"
+    readlink ~/.config/wallust/current-theme.json
+    echo ""
+    echo "Available dark themes:"
+    ls -1 ~/.config/wallust/colorschemes/dark/
+    echo ""
+    echo "Available light themes:"
+    ls -1 ~/.config/wallust/colorschemes/light/ 2>/dev/null || echo "(none)"
+    echo ""
+    echo "Usage: wallust-set-default THEME_NAME.json"
+    echo "   or: wallust-set-default /full/path/to/theme.json"
+    exit 0
+fi
+
+# If full path provided, use it directly
+if [[ "$1" == /* ]]; then
+    THEME_PATH="$1"
+    THEME_NAME=$(basename "$1")
+# If relative path or just filename, search for it
+else
+    THEME_NAME="$1"
+    # Try dark themes first
+    if [ -f "$HOME/.config/wallust/colorschemes/dark/$THEME_NAME" ]; then
+        THEME_PATH="$HOME/.config/wallust/colorschemes/dark/$THEME_NAME"
+    # Then try light themes
+    elif [ -f "$HOME/.config/wallust/colorschemes/light/$THEME_NAME" ]; then
+        THEME_PATH="$HOME/.config/wallust/colorschemes/light/$THEME_NAME"
+    else
+        THEME_PATH=""
+    fi
+fi
+
+if [ -z "$THEME_PATH" ] || [ ! -f "$THEME_PATH" ]; then
+    echo "Error: Theme '$1' not found"
+    echo ""
+    echo "Available dark themes:"
+    ls -1 ~/.config/wallust/colorschemes/dark/
+    echo ""
+    echo "Available light themes:"
+    ls -1 ~/.config/wallust/colorschemes/light/ 2>/dev/null || echo "(none)"
+    echo ""
+    echo "Usage: wallust-set-default THEME_NAME.json"
+    echo "   or: wallust-set-default /full/path/to/theme.json"
+    exit 1
+fi
+
+# Update the symlink
+ln -sf "$THEME_PATH" ~/.config/wallust/current-theme.json
+
+echo "✓ Default theme set to: $THEME_NAME"
+echo "  Path: $THEME_PATH"
+echo ""
+echo "Apply now with:"
+echo "  wallust cs ~/.config/wallust/current-theme.json"
+echo ""
+echo "Or it will apply automatically on next login/restart"

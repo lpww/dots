@@ -28,7 +28,7 @@ run picom -b  --config ~/.config/fancy-dwm/picom.conf & # handle transparent win
 run sxhkd -c ~/.config/fancy-dwm/sxhkd/sxhkdrc & # load sxhkd (wm agnostic) shortcuts
 
 # theme
-run wal -R # restore the last used pywal theme
+run ~/.cargo/bin/wallust cs ~/.config/wallust/current-theme.json
 feh --bg-fill ~/backgrounds/current-background.jpg
 
 # register screen locker

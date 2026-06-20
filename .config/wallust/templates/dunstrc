@@ -1,0 +1,38 @@
+# symlink the resulting .cache file to get pywal colors in dunst
+# https://github.com/dylanaraps/pywal/issues/322#issuecomment-432808411
+# apply config changes by: set pywal theme, restart dunst, dunstify to emit test notifications
+
+[global]
+    width = 350
+    height = 350
+    offset = 15x50
+
+    notification_limit = 3
+
+    progress_bar = true
+
+    transparency = 10
+
+    padding = 8
+    gap_size = 3
+
+    font = Monospace 15
+
+    format = "<b>%s</b>: %b"
+
+    markup = full
+
+[urgency_low]
+    background = "{foreground}"
+    foreground = "{background}"
+    frame_color = "{color2}"
+
+[urgency_normal]
+    background = "{foreground}"
+    foreground = "{background}"
+    frame_color = "{color3}"
+
+[urgency_critical]
+    background = "{foreground}"
+    foreground = "{background}"
+    frame_color = "{color1}"
