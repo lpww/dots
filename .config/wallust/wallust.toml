@@ -14,6 +14,7 @@ shell = { template = 'colors.sh', target = '/home/thomas/.cache/wal/colors.sh' }
 dunst = { template = 'dunstrc', target = '/home/thomas/.cache/wal/dunstrc' }
 dwm = { template = 'colors-wal-dwm.h', target = '/home/thomas/.cache/wal/colors-wal-dwm.h' }
 vim = { template = 'colors-wal.vim', target = '/home/thomas/.cache/wal/colors-wal.vim' }
+neopywal = { template = 'colors_neopywal.vim', target = '/home/thomas/.cache/wallust/colors_neopywal.vim' }
 json = { template = 'colors.json', target = '/home/thomas/.cache/wal/colors.json' }
 sequences = { template = 'sequences', target = '/home/thomas/.cache/wal/sequences' }
 test = { template = 'test.toml', target = '/tmp/wallust-test-output.toml' }
