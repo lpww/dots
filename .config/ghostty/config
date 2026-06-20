@@ -4,6 +4,9 @@
 # transparent background
 background-opacity = 0.92
 
+# limit scrollback buffer to 100 MB to prevent excessive memory usage
+scrollback-limit = 104857600
+
 # solid block cursor
 cursor-style = block
 cursor-style-blink = false
