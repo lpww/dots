@@ -11,12 +11,12 @@ NOTE_PATH="$NOTE_DIR/$NOTE_TITLE.md";
 # without timestamp
 
 # add title if the note does not exist
-if [[ ! -f $NOTE_PATH ]]; then
-  echo "## $NOTE_TITLE" >> $NOTE_PATH
+if [ ! -f "$NOTE_PATH" ]; then
+  echo "## $NOTE_TITLE" >> "$NOTE_PATH"
 fi
 
 # open the note in neovim
-nvim $NOTE_PATH;
+nvim "$NOTE_PATH";
 
 # with timestamp
 # TIMESTAMP="$(date +%Y-%m-%d_%H:%M)";

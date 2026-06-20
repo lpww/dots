@@ -23,16 +23,16 @@
     markup = full
 
 [urgency_low]
-    background = "{foreground}"
-    foreground = "{background}"
-    frame_color = "{color2}"
+    background = "{{foreground}}"
+    foreground = "{{background}}"
+    frame_color = "{{color2}}"
 
 [urgency_normal]
-    background = "{foreground}"
-    foreground = "{background}"
-    frame_color = "{color3}"
+    background = "{{foreground}}"
+    foreground = "{{background}}"
+    frame_color = "{{color3}}"
 
 [urgency_critical]
-    background = "{foreground}"
-    foreground = "{background}"
-    frame_color = "{color1}"
+    background = "{{foreground}}"
+    foreground = "{{background}}"
+    frame_color = "{{color1}}"

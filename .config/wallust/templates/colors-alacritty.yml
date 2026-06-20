@@ -2,8 +2,8 @@
 colors:
 
   primary:
-    background: "{background}"
-    foreground: "{foreground}"
+    background: "{{background}}"
+    foreground: "{{foreground}}"
 
   cursor:
     text: CellBackground
@@ -15,15 +15,15 @@ colors:
 
   search:
     matches:
-      foreground: '{color0}'
-      background: '{color15}'
+      foreground: '{{color0}}'
+      background: '{{color15}}'
     focused_match:
       foreground: CellBackground
       background: CellForeground
 
     footer_bar:
-      foreground: '{color8}'
-      background: '{color7}'
+      foreground: '{{color8}}'
+      background: '{{color7}}'
 
   line_indicator:
     foreground: None
@@ -34,31 +34,31 @@ colors:
     background: CellForeground
 
   normal:
-    black: "{color0}"
-    red: "{color1}"
-    green: "{color2}"
-    yellow: "{color3}"
-    blue: "{color4}"
-    magenta: "{color5}"
-    cyan: "{color6}"
-    white: "{color7}"
+    black: "{{color0}}"
+    red: "{{color1}}"
+    green: "{{color2}}"
+    yellow: "{{color3}}"
+    blue: "{{color4}}"
+    magenta: "{{color5}}"
+    cyan: "{{color6}}"
+    white: "{{color7}}"
 
   bright:
-    black: "{color8}"
-    red: "{color9}"
-    green: "{color10}"
-    yellow: "{color11}"
-    blue: "{color12}"
-    magenta: "{color13}"
-    cyan: "{color14}"
-    white: "{color15}"
+    black: "{{color8}}"
+    red: "{{color9}}"
+    green: "{{color10}}"
+    yellow: "{{color11}}"
+    blue: "{{color12}}"
+    magenta: "{{color13}}"
+    cyan: "{{color14}}"
+    white: "{{color15}}"
 
   dim:
-    black: "{color15}"
-    red: "{color9}"
-    green: "{color13}"
-    yellow: "{color11}"
-    blue: "{color12}"
-    magenta: "{color10}"
-    cyan: "{color14}"
-    white: "{color8}"
+    black: "{{color15}}"
+    red: "{{color9}}"
+    green: "{{color13}}"
+    yellow: "{{color11}}"
+    blue: "{{color12}}"
+    magenta: "{{color10}}"
+    cyan: "{{color14}}"
+    white: "{{color8}}"
