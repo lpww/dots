@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# a script to port forward to a kubernetes pod
+# it searches for the precise pod name based on a partial
+# it also detects dropped connections, and re-connects automatically
 # Usage: kpf <context> <namespace> <service-name> <local-port:remote-port>
 # Example: kpf dev-context energy-platform my-grpc-service 8090:8090
 
@@ -15,16 +18,35 @@ NAMESPACE="$2"
 SERVICE="$3"
 PORTS="$4"
 
-POD=$(kubectl --context="$CONTEXT" --namespace="$NAMESPACE" get pods \
-  -o jsonpath='{.items[*].metadata.name}' \
-  | tr ' ' '\n' \
-  | grep -E "^${SERVICE}-([a-z0-9]+-[a-z0-9]+|[a-z0-9]+-[0-9]+)$" \
-  | head -n1) || true
+RETRY_DELAY="${KPF_RETRY_DELAY:-2}"
 
-if [[ -z "$POD" ]]; then
-  echo "No pod found matching '$SERVICE' in namespace '$NAMESPACE' (context '$CONTEXT')" >&2
-  exit 1
-fi
+trap 'echo; echo "Interrupted." >&2; exit 130' INT TERM
 
-echo "Port-forwarding pod: $POD ($PORTS)"
-exec kubectl --context="$CONTEXT" --namespace="$NAMESPACE" port-forward "$POD" "$PORTS"
+while true; do
+  POD=$(kubectl --context="$CONTEXT" --namespace="$NAMESPACE" get pods \
+    -o jsonpath='{.items[*].metadata.name}' \
+    | tr ' ' '\n' \
+    | grep -E "^${SERVICE}-([a-z0-9]+-[a-z0-9]+|[a-z0-9]+-[0-9]+)$" \
+    | head -n1) || true
+
+  if [[ -z "$POD" ]]; then
+    echo "No pod found matching '$SERVICE' in namespace '$NAMESPACE' (context '$CONTEXT')" >&2
+    exit 1
+  fi
+
+  echo "Port-forwarding pod: $POD ($PORTS)"
+
+  LOG=$(mktemp)
+  kubectl --context="$CONTEXT" --namespace="$NAMESPACE" port-forward "$POD" "$PORTS" 2>&1 | tee "$LOG" || true
+  STATUS=${PIPESTATUS[0]}
+
+  if ! grep -q "^Forwarding from" "$LOG"; then
+    rm -f "$LOG"
+    echo "port-forward to '$POD' never established a connection (exit $STATUS); giving up" >&2
+    exit "$STATUS"
+  fi
+
+  rm -f "$LOG"
+  echo "Connection dropped (exit $STATUS); reconnecting in ${RETRY_DELAY}s..." >&2
+  sleep "$RETRY_DELAY"
+done
