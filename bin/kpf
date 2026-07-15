@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Usage: kpf <context> <namespace> <service-name> <local-port:remote-port>
+# Example: kpf dev-context energy-platform my-grpc-service 8090:8090
+
+if [[ $# -ne 4 ]]; then
+  echo "Usage: $0 <context> <namespace> <service-name> <local-port:remote-port>" >&2
+  echo "Example: $0 dev-context energy-platform my-grpc-service 8090:8090" >&2
+  exit 1
+fi
+
+CONTEXT="$1"
+NAMESPACE="$2"
+SERVICE="$3"
+PORTS="$4"
+
+POD=$(kubectl --context="$CONTEXT" --namespace="$NAMESPACE" get pods \
+  -o jsonpath='{.items[*].metadata.name}' \
+  | tr ' ' '\n' \
+  | grep -E "^${SERVICE}-([a-z0-9]+-[a-z0-9]+|[a-z0-9]+-[0-9]+)$" \
+  | head -n1) || true
+
+if [[ -z "$POD" ]]; then
+  echo "No pod found matching '$SERVICE' in namespace '$NAMESPACE' (context '$CONTEXT')" >&2
+  exit 1
+fi
+
+echo "Port-forwarding pod: $POD ($PORTS)"
+exec kubectl --context="$CONTEXT" --namespace="$NAMESPACE" port-forward "$POD" "$PORTS"
