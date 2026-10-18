@@ -1,0 +1,103 @@
+#!/bin/sh
+
+get_configs() {
+    bash -c 'ls /etc/wireguard/*.conf 2>/dev/null | xargs -n1 basename -s .conf'
+}
+
+get_active_config() {
+    sudo wg show interfaces 2>/dev/null
+}
+
+is_connected() {
+    [ -n "$(get_active_config)" ]
+}
+
+if is_connected; then
+    ACTIVE=$(get_active_config)
+    CHOICE=$(printf "Disconnect\nAdd config\nDelete config" | rofi -dmenu -p "VPN (Connected: $ACTIVE)")
+else
+    CHOICE=$(printf "Connect\nAdd config\nDelete config" | rofi -dmenu -p "VPN (Disconnected)")
+fi
+
+case "$CHOICE" in
+    "Connect")
+        CONFIGS=$(get_configs)
+        if [ -z "$CONFIGS" ]; then
+            notify-send "VPN" "No configs available. Add one first."
+            exit 0
+        fi
+        
+        SELECTED=$(echo "$CONFIGS" | rofi -dmenu -p "Connect to which config?")
+        [ -z "$SELECTED" ] && exit 0
+        
+        if sudo wg-quick up "$SELECTED"; then
+            notify-send "VPN" "Connected to $SELECTED"
+        else
+            notify-send "VPN" "Failed to connect"
+            exit 1
+        fi
+        ;;
+    "Disconnect")
+        ACTIVE=$(get_active_config)
+        if sudo wg-quick down "$ACTIVE"; then
+            notify-send "VPN" "Disconnected from $ACTIVE"
+        else
+            notify-send "VPN" "Failed to disconnect"
+            exit 1
+        fi
+        ;;
+    "Add config")
+        SELECTED_FILE=$(rofi -show filebrowser -filebrowser-command "echo" 2>/dev/null)
+        
+        if [ -z "$SELECTED_FILE" ]; then
+            exit 0
+        fi
+        
+        if [ ! -f "$SELECTED_FILE" ]; then
+            notify-send "VPN" "Error: Not a valid file"
+            exit 1
+        fi
+        
+        CONFIG_NAME=$(basename "$SELECTED_FILE")
+        TARGET="/etc/wireguard/$CONFIG_NAME"
+        
+        if test -f "$TARGET"; then
+            notify-send "VPN" "Error: Config already exists: $CONFIG_NAME"
+            exit 1
+        fi
+        
+        if pkexec sh -c "cp '$SELECTED_FILE' '$TARGET' && chmod 600 '$TARGET'"; then
+            notify-send "VPN" "Added config: $CONFIG_NAME"
+        else
+            notify-send "VPN" "Failed to add config"
+            exit 1
+        fi
+        ;;
+    "Delete config")
+        ACTIVE=$(get_active_config)
+        CONFIGS=$(get_configs)
+        
+        if [ -z "$CONFIGS" ]; then
+            notify-send "VPN" "No configs available"
+            exit 0
+        fi
+        
+        SELECTED=$(echo "$CONFIGS" | rofi -dmenu -p "Delete which config?")
+        [ -z "$SELECTED" ] && exit 0
+        
+        if [ -n "$ACTIVE" ] && [ "$SELECTED" = "$ACTIVE" ]; then
+            notify-send "VPN" "Cannot delete active config: $SELECTED"
+            exit 1
+        fi
+        
+        CONFIRM=$(printf "No\nYes" | rofi -dmenu -p "Delete $SELECTED?")
+        if [ "$CONFIRM" = "Yes" ]; then
+            if pkexec rm "/etc/wireguard/$SELECTED.conf"; then
+                notify-send "VPN" "Deleted config: $SELECTED"
+            else
+                notify-send "VPN" "Failed to delete config"
+                exit 1
+            fi
+        fi
+        ;;
+esac
