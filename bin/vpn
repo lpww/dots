@@ -1,7 +1,7 @@
 #!/bin/sh
 
 get_configs() {
-    bash -c 'ls /etc/wireguard/*.conf 2>/dev/null | xargs -n1 basename -s .conf'
+    ls /etc/wireguard/*.conf 2>/dev/null | xargs -n1 basename -s .conf
 }
 
 get_active_config() {
@@ -66,6 +66,7 @@ case "$CHOICE" in
             exit 1
         fi
         
+        # sh -c is needed to run cp and chmod with a single pkexec password entry
         if pkexec sh -c "cp '$SELECTED_FILE' '$TARGET' && chmod 600 '$TARGET'"; then
             notify-send "VPN" "Added config: $CONFIG_NAME"
         else
