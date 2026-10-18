@@ -67,8 +67,12 @@ case "$CHOICE" in
         fi
         
         # sh -c is needed to run cp and chmod with a single pkexec password entry
-        if pkexec sh -c "cp '$SELECTED_FILE' '$TARGET' && chmod 600 '$TARGET'"; then
-            notify-send "VPN" "Added config: $CONFIG_NAME"
+        # Also add MTU = 1380 if not present in the [Interface] section
+        if pkexec sh -c "cp '$SELECTED_FILE' '$TARGET' && chmod 600 '$TARGET' && \
+            if ! grep -q '^MTU' '$TARGET'; then \
+                sed -i '/^\[Interface\]/a MTU = 1380' '$TARGET'; \
+            fi"; then
+            notify-send "VPN" "Added config: $CONFIG_NAME (with MTU fix)"
         else
             notify-send "VPN" "Failed to add config"
             exit 1
