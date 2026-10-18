@@ -1,24 +1,35 @@
 #!/bin/sh
 
+# vpn
+# this script uses rofi as a ui for interfacing with wireguard vpn configs
+# it uses proton specific logic to parse comments when adding new configs
+# this part would need to be changed to make it work with cconfigs from other vpn providers
+
+# list all wireguard configs
 get_configs() {
     ls /etc/wireguard/*.conf 2>/dev/null | xargs -n1 basename -s .conf
 }
 
+# get the active wireguard config
 get_active_config() {
     sudo wg show interfaces 2>/dev/null
 }
 
+# is wireguard connected
 is_connected() {
     [ -n "$(get_active_config)" ]
 }
 
 if is_connected; then
     ACTIVE=$(get_active_config)
+    # if connected, display the Disconnect option
     CHOICE=$(printf "Disconnect\nAdd config\nDelete config" | rofi -dmenu -p "VPN (Connected: $ACTIVE)")
 else
+    # if not connected, display the Connect option
     CHOICE=$(printf "Connect\nAdd config\nDelete config" | rofi -dmenu -p "VPN (Disconnected)")
 fi
 
+# handle rofi menu options
 case "$CHOICE" in
     "Connect")
         CONFIGS=$(get_configs)
@@ -27,9 +38,11 @@ case "$CHOICE" in
             exit 0
         fi
         
+        # prompt the user with available configs
         SELECTED=$(echo "$CONFIGS" | rofi -dmenu -p "Connect to which config?")
         [ -z "$SELECTED" ] && exit 0
         
+        # connect to the selected config
         if sudo wg-quick up "$SELECTED"; then
             notify-send "VPN" "Connected to $SELECTED"
         else
@@ -38,6 +51,7 @@ case "$CHOICE" in
         fi
         ;;
     "Disconnect")
+        # disconnect from the active connection
         ACTIVE=$(get_active_config)
         if sudo wg-quick down "$ACTIVE"; then
             notify-send "VPN" "Disconnected from $ACTIVE"
@@ -47,6 +61,7 @@ case "$CHOICE" in
         fi
         ;;
     "Add config")
+        # launch rofi in file browser mode for file search capabilities
         SELECTED_FILE=$(rofi -show filebrowser -filebrowser-command "echo" 2>/dev/null)
         
         if [ -z "$SELECTED_FILE" ]; then
@@ -61,13 +76,16 @@ case "$CHOICE" in
         CONFIG_NAME=$(basename "$SELECTED_FILE")
         TARGET="/etc/wireguard/$CONFIG_NAME"
         
+        # prevent creation if the config already exists
         if test -f "$TARGET"; then
             notify-send "VPN" "Error: Config already exists: $CONFIG_NAME"
             exit 1
         fi
         
         # sh -c is needed to run cp and chmod with a single pkexec password entry
-        # Also add MTU = 1380 if not present in the [Interface] section
+        # and add MTU = 1380 to the config, if it doesn't already exist
+        # MTU is a network specific setting, and this value works for me
+        # it could need changing on different networks
         if pkexec sh -c "cp '$SELECTED_FILE' '$TARGET' && chmod 600 '$TARGET' && \
             if ! grep -q '^MTU' '$TARGET'; then \
                 sed -i '/^\[Interface\]/a MTU = 1380' '$TARGET'; \
@@ -87,14 +105,17 @@ case "$CHOICE" in
             exit 0
         fi
         
+        # prompt the user with available configs
         SELECTED=$(echo "$CONFIGS" | rofi -dmenu -p "Delete which config?")
         [ -z "$SELECTED" ] && exit 0
         
+        # prevent deletion of the active config
         if [ -n "$ACTIVE" ] && [ "$SELECTED" = "$ACTIVE" ]; then
             notify-send "VPN" "Cannot delete active config: $SELECTED"
             exit 1
         fi
         
+        # prompt for confirmation of deletion, then delete
         CONFIRM=$(printf "No\nYes" | rofi -dmenu -p "Delete $SELECTED?")
         if [ "$CONFIRM" = "Yes" ]; then
             if pkexec rm "/etc/wireguard/$SELECTED.conf"; then
